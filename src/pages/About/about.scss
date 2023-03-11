@@ -1,0 +1,59 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 413px;
+  &__back-btn {
+    font-family: "Karla", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+  }
+  &__name {
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    margin: 30px 0 34px;
+    color: #081f32;
+  }
+  &__avatar {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #f2f2f7;
+    border-radius: 150px;
+    &_img{
+
+      border-radius: 150px;
+    }
+  }
+}
+
+.information {
+  &__text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #8e8e93;
+  }
+}
+
+@media (575px <= width <= 991px) {
+  .about-page {
+    &__avatar {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+@media (992px <= width) {
+  .about-page {
+    &__avatar {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

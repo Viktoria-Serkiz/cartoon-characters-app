@@ -1,0 +1,65 @@
+.card {
+  width: 100%;
+  height: 308px;
+  margin: 0 10px 24px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.15px;
+    color: rgba(0, 0, 0, 0.87);
+    mix-blend-mode: normal;
+    margin-bottom: 7px;
+  }
+  &__role {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  &__img {
+    display: block;
+    border-radius: 4px 4px 0 0;
+    height: 224px;
+    object-fit: cover;
+    width: 100%;
+  }
+  &__description {
+    padding: 12px 16px;
+    &_link {
+      text-decoration: none;
+    }
+  }
+}
+
+.card-container {
+  padding-top: 55px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px 0;
+}
+
+@media (576px <= width <= 767px) {
+  .card {
+    width: 46%;
+  }
+}
+
+@media (768px <= width <= 991px) {
+  .card {
+    width: 30.333%;
+  }
+}
+
+@media (992px <= width) {
+  .card {
+    width: 22.97%;
+  }
+}
