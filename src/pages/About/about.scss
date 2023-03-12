@@ -4,12 +4,24 @@
   align-items: center;
   width: 413px;
   &__back-btn {
+    display: flex;
+    align-items: center;
     font-family: "Karla", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
+    text-transform: uppercase;
+    margin: 25px 0 0 54px;
     color: #000000;
+    background-color: transparent;
+    & svg {
+      margin-right: 12px;
+      &:hover {
+        transform: translateX(-5px);
+        transition: all 250ms ease;
+      }
+    }
   }
   &__name {
     font-size: 32px;
@@ -21,10 +33,10 @@
   &__avatar {
     width: 150px;
     height: 150px;
+    margin: 0 auto;
     border: 5px solid #f2f2f7;
     border-radius: 150px;
-    &_img{
-
+    &_img {
       border-radius: 150px;
     }
   }

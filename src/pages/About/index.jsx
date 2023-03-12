@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { Loader } from "../../components";
+import { BackButton, Loader } from "../../components";
 import { getCharactersById } from "../../api/characters";
 
 const About = () => {
+  const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [characterInfo, setCharacterInfo] = useState({});
-  const { id } = useParams();
 
   const getCharacter = async () => {
     try {
@@ -31,11 +31,7 @@ const About = () => {
 
   return (
     <>
-      <Link to="/">
-        <button type="button" className="btn about-page__back-btn">
-          Go back
-        </button>
-      </Link>
+      <BackButton />
       <div className="container about-page">
         <header className="about-page__header">
           <div className="about-page__avatar">
