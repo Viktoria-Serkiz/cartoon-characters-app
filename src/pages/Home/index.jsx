@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Header, Characters } from "../../components";
@@ -7,6 +7,7 @@ import { getCharacterThunk } from "../../store/character/thunk";
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const [value, onChange] = useState("");
 
   const { loading, character } = useSelector(getCharacter);
 
@@ -14,10 +15,14 @@ const HomePage = () => {
     dispatch(getCharacterThunk());
   }, []);
 
+  const filtered = character?.filter((item) =>
+    item.name.toLowerCase().includes(value.toLowerCase())
+  );
+
   return (
     <>
-      <Header />
-      <Characters loading={loading} character={character} />
+      <Header value={value} onChange={onChange} />
+      <Characters loading={loading} character={filtered} />
     </>
   );
 };

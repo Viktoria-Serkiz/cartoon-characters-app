@@ -32,7 +32,7 @@ const About = () => {
   return (
     <>
       <BackButton />
-      <div className="container about-page">
+      <div className="about-page">
         <header className="about-page__header">
           <div className="about-page__avatar">
             <img
@@ -45,7 +45,7 @@ const About = () => {
         </header>
         <main>
           <section className="information">
-            <h2 className="information__text">Information</h2>
+            <h2 className="information__text">Informations</h2>
             <ul className="information__list">
               <li className="information__item">
                 <h3 className="information__item_title">Gender</h3>
@@ -69,7 +69,9 @@ const About = () => {
               </li>
               <li className="information__item">
                 <h3 className="information__item_title">Type</h3>
-                <p className="information__item_text">{characterInfo.type}</p>
+                <p className="information__item_text">
+                  {characterInfo.type === "" ? "Unknown" : characterInfo.type}
+                </p>
               </li>
             </ul>
           </section>

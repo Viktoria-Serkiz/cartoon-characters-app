@@ -1,8 +1,8 @@
 .about-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 413px;
+  min-width: 312px;
+  max-width: 413px;
+  margin: 0 auto;
+  padding: 20px 20px 140px;
   &__back-btn {
     display: flex;
     align-items: center;
@@ -48,7 +48,26 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.15px;
+    margin-bottom: 16px;
     color: #8e8e93;
+  }
+  &__item {
+    list-style: none;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+    padding: 9px 0 12px 0;
+    margin-left: 16px;
+    &_title {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: #081f32;
+    }
+    &_text {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+      color: #6e798c;
+    }
   }
 }
 
@@ -66,6 +85,21 @@
     &__avatar {
       width: 300px;
       height: 300px;
+    }
+    &__name {
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 56px;
+      margin: 16px 0 48px;
+    }
+  }
+
+  .information {
+    &__text {
+      text-align: center;
+    }
+    &__list {
+      width: 413px;
     }
   }
 }

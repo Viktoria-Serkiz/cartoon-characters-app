@@ -6,10 +6,13 @@ const Characters = ({ loading, character }) => {
       <div className="container card-container">
         <div className="card-wrapper">
           {loading && <Loader />}
-          {character &&
+          {character && character.length > 0 ? (
             character.map((item) => {
               return <Card key={item.id} {...item} />;
-            })}
+            })
+          ) : (
+            <p className="card-wrapper_no-data">No data</p>
+          )}
         </div>
       </div>
     </>
