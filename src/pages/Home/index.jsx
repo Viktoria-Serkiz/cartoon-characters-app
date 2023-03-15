@@ -12,13 +12,20 @@ const HomePage = () => {
   const { loading, character } = useSelector(getCharacter);
 
   useEffect(() => {
-    dispatch(getCharacterThunk());
+    const data = window.localStorage.getItem("CARDS");
+    onChange(data);
+    if (data !== null) onChange(data);
   }, []);
+
+  useEffect(() => {
+    dispatch(getCharacterThunk());
+    window.localStorage.setItem("CARDS", value);
+  }, [value]);
 
   const filtered = character?.filter((item) =>
     item.name.toLowerCase().includes(value.toLowerCase())
   );
-
+  
   return (
     <>
       <Header value={value} onChange={onChange} />
