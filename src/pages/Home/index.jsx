@@ -25,7 +25,7 @@ const HomePage = () => {
   const filtered = character?.filter((item) =>
     item.name.toLowerCase().includes(value.toLowerCase())
   );
-  
+
   return (
     <>
       <Header value={value} onChange={onChange} />
