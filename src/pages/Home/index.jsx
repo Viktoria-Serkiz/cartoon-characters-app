@@ -12,18 +12,13 @@ const HomePage = () => {
   const { loading, character } = useSelector(getCharacter);
 
   useEffect(() => {
+    dispatch(getCharacterThunk(value));
     const data = localStorage.getItem("INPUT_VALUE");
-    onChange(data);
-    if (data !== null) onChange(data);
+    if (data) onChange(data);
   }, []);
 
-  useEffect(() => {
-    dispatch(getCharacterThunk());
-    localStorage.setItem("INPUT_VALUE", value);
-  }, [value]);
-
   const filtered = character?.filter((item) =>
-    item.name.toLowerCase().includes(value.toLowerCase())
+    item.name?.toLowerCase().includes(value.toLowerCase())
   );
 
   return (
