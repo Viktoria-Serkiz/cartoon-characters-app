@@ -12,14 +12,14 @@ const HomePage = () => {
   const { loading, character } = useSelector(getCharacter);
 
   useEffect(() => {
-    const data = window.localStorage.getItem("CARDS");
+    const data = localStorage.getItem("INPUT_VALUE");
     onChange(data);
     if (data !== null) onChange(data);
   }, []);
 
   useEffect(() => {
     dispatch(getCharacterThunk());
-    window.localStorage.setItem("CARDS", value);
+    localStorage.setItem("INPUT_VALUE", value);
   }, [value]);
 
   const filtered = character?.filter((item) =>
